@@ -23,7 +23,7 @@ Produced one flat, easy-to-use dataset with all details in one place.
 
 **Screenshots**
 
-![Project demo](assets/demo.gif)
+<img src="assets/demo.gif" width="900">
 
 
 ✅ **Why it’s useful**
