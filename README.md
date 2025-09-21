@@ -3,6 +3,17 @@
 In this project I built a small flight database from scratch and turned it into a clean reporting layer that’s ready for BI tools.
 The idea was to go end-to-end: from raw files → staging tables → dimensions & fact → one reporting view.
 
+## How to run
+
+**Prereqs:** PostgreSQL 15+ and base tables exist: `fact_flight`, `dim_airline`, `dim_airport`.
+
+**psql**
+```bash
+psql -h <host> -U <user> -d flightsdb -f sql/reporting_vw_flight_report.sql
+psql -h <host> -U <user> -d flightsdb -f sql/indexes.sql
+psql -h <host> -U <user> -d flightsdb -f sql/sample_queries.sql
+
+
 🔨 **Steps I took**
 
 Database setup – created a fresh PostgreSQL database for the project.
