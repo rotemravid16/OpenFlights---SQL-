@@ -1,17 +1,28 @@
-✈️ **Flights SQL Reporting View**
+✈️ **Flights SQL Reporting Project**
 
-In this project I built a single reporting view that makes flight data easy to explore and connect to BI tools.
-The idea was to take raw tables (fact_flight, dim_airline, dim_airport) and turn them into one clean and ready-to-use table.
+In this project I built a small flight database from scratch and turned it into a clean reporting layer that’s ready for BI tools.
+The idea was to go end-to-end: from raw files → staging tables → dimensions & fact → one reporting view.
 
-**What I did**
+🔨 **Steps I took**
 
-Converted flight times (like 700 or 2359) into proper SQL time values so they are safe and accurate.
+Database setup – created a fresh PostgreSQL database for the project.
 
-Joined the flights with airline and airport details (names, city, country, coordinates).
+Staging tables – loaded raw OpenFlights data (airports, airlines) and built flexible stg_* tables with UPSERT logic.
 
-Created a view under the reporting schema that can be connected directly to tools like Power BI.
+Dimension tables – cleaned and shaped data into dim_airport and dim_airline.
 
-**Why it’s useful**
+Fact table – created fact_flight with sample flight data: airline code, origin/destination, scheduled & actual times (HHMM), delays, cancellations, distance, etc.
 
-Instead of juggling multiple tables and strange time formats, now there’s one clear dataset that shows:
-Airline → Departure → Arrival → Times → Delays → Cancellations.
+Reporting view – combined everything into reporting.vw_flight_report:
+
+Converted HHMM values (like 700, 2359) into proper SQL time.
+
+Joined flights with airlines and airports by their codes.
+
+Produced one flat, easy-to-use dataset with all details in one place.
+
+✅ **Why it’s useful**
+
+Instead of juggling multiple tables with messy time formats, now there’s a single, tidy view that shows:
+Airline → Departure → Arrival → Times → Delays → Cancellations → Distance.
+Perfect for connecting directly to tools like Power BI.
