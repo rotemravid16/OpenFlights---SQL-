@@ -21,6 +21,11 @@ Joined flights with airlines and airports by their codes.
 
 Produced one flat, easy-to-use dataset with all details in one place.
 
+**Screenshots**
+
+![Project demo](assets/demo.gif)
+
+
 ✅ **Why it’s useful**
 
 Instead of juggling multiple tables with messy time formats, now there’s a single, tidy view that shows:
