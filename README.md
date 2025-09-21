@@ -7,13 +7,13 @@ The idea was to go end-to-end: from raw files → staging tables → dimensions 
 
 **Prereqs:** PostgreSQL 15+ and base tables exist: `fact_flight`, `dim_airline`, `dim_airport`.
 
-**psql**
+### psql
 ```bash
 psql -h <host> -U <user> -d flightsdb -f sql/reporting_vw_flight_report.sql
 psql -h <host> -U <user> -d flightsdb -f sql/indexes.sql
 psql -h <host> -U <user> -d flightsdb -f sql/sample_queries.sql
 
-
+```
 
 🔨 **Steps I took**
 
